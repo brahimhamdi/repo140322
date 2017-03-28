@@ -7,7 +7,7 @@ import me.dovea.factory.factory.Shape;
  */
 public class Triangle implements Shape {
   @Override
-  public String sayHello() {
+  public String draw() {
     return "I'm a Triangle";
   }
 }

@@ -13,6 +13,6 @@ public class ShapeService {
 
  public String sayHello(String shapeType) {
     Shape shape = shapeFactory.getShape(shapeType);
-   return shape.sayHello();
+   return shape.draw();
  }
 }
