@@ -1,7 +1,5 @@
-package me.dovea.factory.factory.impl;
-
-import me.dovea.factory.factory.Shape;
-
+package com.mygglo.factory.factory.impl;
+import com.mygglo.factory.factory.Shape;
 /**
  * Created by jgaglo on 28/03/17.
  */

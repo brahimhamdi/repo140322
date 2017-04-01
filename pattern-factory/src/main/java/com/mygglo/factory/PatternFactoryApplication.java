@@ -1,7 +1,7 @@
-package me.dovea.factory;
+package com.mygglo.factory;
 
 import lombok.extern.slf4j.Slf4j;
-import me.dovea.factory.service.ShapeService;
+import com.mygglo.factory.service.ShapeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

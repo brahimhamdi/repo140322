@@ -1,9 +1,9 @@
-package me.dovea.factory.config;
+package com.mygglo.factory.config;
 
-import me.dovea.factory.factory.impl.Rectangle;
-import me.dovea.factory.factory.ShapeFactory;
-import me.dovea.factory.factory.impl.Circle;
-import me.dovea.factory.factory.impl.Triangle;
+import com.mygglo.factory.factory.ShapeFactory;
+import com.mygglo.factory.factory.impl.Triangle;
+import com.mygglo.factory.factory.impl.Rectangle;
+import com.mygglo.factory.factory.impl.Circle;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.beans.factory.config.ServiceLocatorFactoryBean;

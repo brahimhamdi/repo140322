@@ -1,4 +1,4 @@
-package me.dovea.factory;
+package com.mygglo.factory;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

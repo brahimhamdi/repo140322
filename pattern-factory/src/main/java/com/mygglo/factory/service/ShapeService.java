@@ -1,7 +1,7 @@
-package me.dovea.factory.service;
+package com.mygglo.factory.service;
 
-import me.dovea.factory.factory.Shape;
-import me.dovea.factory.factory.ShapeFactory;
+import com.mygglo.factory.factory.Shape;
+import com.mygglo.factory.factory.ShapeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
