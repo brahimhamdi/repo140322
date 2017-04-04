@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Title</title>
+  <link type="text/css" rel="stylesheet" href="bootstrap.min.css"  th:href="@{/bootstrap.min.css}"/>
+</head>
+<body>
+<section class="col-md-6" style="margin: auto">
+
+    <form action="#" th:action="@{/save}" th:object="${person}" method="post">
+      <p>Id: <input type="text" th:field="*{id}" readonly="readonly"/></p>
+      <p>First Name: <input type="text" th:field="*{firstName}" /></p>
+      <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
+      <p>Telephone: <input type="text" th:field="*{telephone}" /></p>
+      <p><input type="submit" value="Update" /></p>
+    </form>
+  </section>
+
+</body>
+</html>

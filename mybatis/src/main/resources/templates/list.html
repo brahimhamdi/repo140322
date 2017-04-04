@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Title</title>
+  <link type="text/css" rel="stylesheet" href="bootstrap.min.css"  th:href="@{/bootstrap.min.css}"/>
+</head>
+<body>
+<section class="col-md-6" style="margin: auto">
+  <a th:href="@{/data}" class="button">Populate</a>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th colspan=""></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person,iterStat : ${persons}">
+      <th scope="row" th:text="${iterStat.index+1}">1</th>
+      <td th:text="${person.firstName}">Mark</td>
+      <td th:text="${person.lastName}">Otto</td>
+      <td> <a th:href="@{/view/{id}(id=${person.id})}">view</a> </td>
+      <td> <a th:href="@{/del/{id}(id=${person.id})}">del</a> </td>
+
+    </tr>
+    </tbody>
+  </table>
+</section>
+</body>
+</html>
