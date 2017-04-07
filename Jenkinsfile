@@ -5,10 +5,11 @@ node {
 
    stage('Preparation') {
       mvnHome = tool 'M3'
+      ansible = tool 'ANS'
    }
    stage('Build') {
 
-         sh "'${mvnHome}/bin/mvn' clean install -DskipTests -f mybatis/pom.xml"
+         sh "'${mvnHome}/bin/mvn' clean install  -f mybatis/pom.xml"
 
    }
 
