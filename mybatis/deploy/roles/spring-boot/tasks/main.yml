@@ -1,0 +1,35 @@
+---
+#deploy jar with supervisord
+- name: Debug executables
+  debug: msg="Project {{ item.key }} is {{project_folder}}/{{ item.value.artifactId }} ({{project_folder}}/{{ item.value.source }})"
+  with_dict: "{{ executables }}"
+
+- name : Create remote jar folder
+  file:
+    path: "{{remote_folder}}"
+    state: directory
+
+- name : Stop services
+  systemd: name=supervisord state=stopped
+
+
+- name: Copy artifact to server
+  copy:
+    src: "{{project_folder}}/{{ item.value.source }}"
+    dest: "{{ remote_folder }}/{{ item.value.artifactId }}"
+    mode : 755
+  with_dict: "{{ executables }}"
+
+- name: Copy prod application.properties to server
+  copy:
+    src: "{{ deploy_folder }}/application.properties"
+    dest: "{{ remote_folder }}"
+
+- name: Copy config to server
+  template:
+    src: supervisord.conf.j2
+    dest: "{{ config_folder }}/{{ item.key }}-{{slug}}.conf"
+  with_dict: "{{ executables }}"
+
+- name: Start services
+  systemd: name=supervisord state=started

@@ -1,0 +1,10 @@
+---
+project_folder : "{{ playbook_dir }}/.."
+
+deploy_folder : "{{ project_folder}}/deploy"
+
+#jar folder on the remote server
+remote_folder : "/var/spring-boot/{{job_name}}"
+
+#remote config folder
+config_folder : /etc/supervisor/conf.d

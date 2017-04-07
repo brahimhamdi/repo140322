@@ -1,0 +1,11 @@
+---
+#project executable jar files by execution order priority.
+executables:
+  liquibase:
+    artifactId: liquibase-0.0.1-SNAPSHOT.jar
+    source: liquibase/target/liquibase-0.0.1-SNAPSHOT.jar
+    config: "{{ deploy_folder }}/liquibase.conf"
+  procollect:
+    artifactId: procollect-0.0.1-SNAPSHOT.jar
+    source: target/procollect-0.0.1-SNAPSHOT.jar
+    config: "{{ deploy_folder }}/procollect.conf"

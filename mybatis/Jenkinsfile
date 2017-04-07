@@ -1,0 +1,34 @@
+#!groovy
+node {
+   def mvnHome
+   checkout scm
+
+   stage('Preparation') {
+      mvnHome = tool 'M3'
+   }
+   stage('Build') {
+         echo "My branch is: ${env.BRANCH_NAME}"
+         job_name = env.JOB_NAME.toLowerCase()
+         job_name = job_name.replaceAll(" ","-")
+         job_name_slug = job_name.replaceAll("/","_")
+
+         echo "job_name is ${job_name}"
+
+         if (env.BRANCH_NAME == 'deploy') {
+           stage 'Only on master'
+           println 'This happens only on master'
+         } else {
+           stage 'Other branches'
+           println "Current branch ${env.BRANCH_NAME}"
+         }
+
+         sh "'${mvnHome}/bin/mvn' clean install -DskipTests"
+         sh "ansible-playbook deploy/dev.yml --extra-vars 'job_name=${job_name} slug=${job_name_slug}'"
+
+   }
+
+   stage('Results') {
+      archive '**/target/*.jar'
+   }
+
+}
