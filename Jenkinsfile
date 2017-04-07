@@ -3,9 +3,12 @@ node {
    def mvnHome
    checkout scm
 
+   stage('Preparation') {
+      mvnHome = tool 'M3'
+   }
    stage('Build') {
 
-         sh "mvn clean install -DskipTests -f mybatis/pom.xml"
+         sh "'${mvnHome}/bin/mvn' clean install -DskipTests -f mybatis/pom.xml"
 
    }
 
