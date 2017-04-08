@@ -20,7 +20,7 @@ public class PersonController {
 
   @RequestMapping("/")
   public String index(Model model){
-    model.addAttribute("persons",personService.fetchAll());
+    model.addAttribute("persons", personService.fetchAll());
     return "list";
   }
 
@@ -38,7 +38,7 @@ public class PersonController {
 
   @RequestMapping("/view/{id}")
   public String view(@PathVariable Long id,Model model){
-    model.addAttribute("person",personService.findById(id));
+    model.addAttribute("person", personService.findById(id));
     return "save";
   }
 
