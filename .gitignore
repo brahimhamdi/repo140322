@@ -23,4 +23,4 @@ dist/
 nbdist/
 .nb-gradle/
 spring-data-mybatis
-mybatis-spring-data
+oauth2
