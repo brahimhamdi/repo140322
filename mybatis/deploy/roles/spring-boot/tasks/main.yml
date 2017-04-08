@@ -10,7 +10,7 @@
     state: directory
 
 - name : Stop services
-  systemd: name=supervisord state=stopped
+  service: name=supervisor state=stopped
 
 
 - name: Copy artifact to server
@@ -32,4 +32,4 @@
   with_dict: "{{ executables }}"
 
 - name: Start services
-  systemd: name=supervisord state=started
+  service: name=supervisor state=started

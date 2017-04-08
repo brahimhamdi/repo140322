@@ -1,8 +1,8 @@
 [program:{{ item.key }}]
-command=/etc/alternatives/java  -Dlogging.path=/var/log/spring/ -jar {{ remote_folder }}/{{ item.value.artifactId }}
+command=/etc/alternatives/java  -Dlogging.path=/var/log/ -jar {{ remote_folder }}/{{ item.value.artifactId }}
 autostart=true
 autorestart=true
-startsecs=10
+startsecs=500
 startretries=3
-stdout_logfile=/var/log/spring/%(program_name)-stdout.log
-stderr_logfile=/var/log/spring/%(program_name)-stderr.log
+stdout_logfile=/var/log/%(program_name)-stdout.log
+stderr_logfile=/var/log/%(program_name)-stderr.log
