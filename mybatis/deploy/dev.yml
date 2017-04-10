@@ -1,7 +1,7 @@
 ---
 #dependencies https://github.com/zokeber/supervisor-systemd
 #deployment server name
-- hosts: spring-boot
+- hosts: lab-server
   vars_files :
     - vars/application.yml
   roles:
