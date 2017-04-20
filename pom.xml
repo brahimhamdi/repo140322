@@ -33,6 +33,7 @@
 	<modules>
 		<!--<module>spring-data-mybatis</module>-->
 		<module>pattern-factory</module>
+		<module>batch</module>
 	</modules>
 
 
