@@ -12,6 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableMybatisRepositories
 @SpringBootApplication
 @EnableScheduling
+@MapperScan("com.mygglo.mybatis.spring.data.domain.mapper")
 public class MybatisSpringDataApplication {
 
 	public static void main(String[] args) {
