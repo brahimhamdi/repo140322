@@ -9,6 +9,7 @@ import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -46,8 +47,7 @@ public class PersonService {
     car2.setColor("Blue");
     car2.setModel("Mustang");
 
-    carRepository.save(car1);
-    carRepository.save(car2);
+    carRepository.save(Arrays.asList(car1,car2));
   }
 
   public List<Person> fetchAll(){
